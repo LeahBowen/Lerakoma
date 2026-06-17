@@ -21,11 +21,13 @@ Sub UpdateDashboard()
 
     Set wsDash = ThisWorkbook.Sheets("Procurement Dashboard")
 
-    ' Clear only cols B:K from row 13 downwards (leave manual entries in L+ intact)
+    ' Clear auto-populated columns B:K and Q from row 13 downwards
+    ' Cols L:P are left intact as they are completed manually on the dashboard
     Dim lastDashRow As Long
     lastDashRow = wsDash.Cells(wsDash.Rows.Count, "B").End(xlUp).Row
     If lastDashRow >= 13 Then
         wsDash.Range("B13:K" & lastDashRow).ClearContents
+        wsDash.Range("Q13:Q" & lastDashRow).ClearContents
     End If
 
     dashRow = 13
@@ -77,6 +79,9 @@ Sub UpdateDashboard()
                 wsDash.Cells(dashRow, "J").Value = ws.Cells(i, "L").Value
                 ' Dashboard col K = Order By (project col K)
                 wsDash.Cells(dashRow, "K").Value = ws.Cells(i, "K").Value
+                ' Dashboard cols L:P left empty for manual completion
+                ' Dashboard col Q = Delivered (project col Q)
+                wsDash.Cells(dashRow, "Q").Value = ws.Cells(i, "Q").Value
 
                 dashRow = dashRow + 1
             End If
