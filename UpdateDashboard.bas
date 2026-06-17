@@ -21,11 +21,11 @@ Sub UpdateDashboard()
 
     Set wsDash = ThisWorkbook.Sheets("Procurement Dashboard")
 
-    ' Clear only cols B:J from row 13 downwards (leave manual entries in K+ intact)
+    ' Clear only cols B:K from row 13 downwards (leave manual entries in L+ intact)
     Dim lastDashRow As Long
     lastDashRow = wsDash.Cells(wsDash.Rows.Count, "B").End(xlUp).Row
     If lastDashRow >= 13 Then
-        wsDash.Range("B13:J" & lastDashRow).ClearContents
+        wsDash.Range("B13:K" & lastDashRow).ClearContents
     End If
 
     dashRow = 13
@@ -75,6 +75,9 @@ Sub UpdateDashboard()
                 wsDash.Cells(dashRow, "I").Value = ws.Cells(i, "I").Value
                 ' Dashboard col J = Link to Proforma (project col L)
                 wsDash.Cells(dashRow, "J").Value = ws.Cells(i, "L").Value
+                ' Dashboard col K = Order By (project col K)
+                wsDash.Cells(dashRow, "K").Value = ws.Cells(i, "K").Value
+
                 dashRow = dashRow + 1
             End If
         Next i
@@ -82,9 +85,10 @@ Sub UpdateDashboard()
 NextSheet:
     Next ws
 
-    ' Format Est. Cost column
+    ' Format Est. Cost and Order By date columns
     If dashRow > 13 Then
         wsDash.Range("I13:I" & (dashRow - 1)).NumberFormat = "£#,##0.00"
+        wsDash.Range("K13:K" & (dashRow - 1)).NumberFormat = "dd/mm/yyyy"
     End If
 
     Application.ScreenUpdating = True
