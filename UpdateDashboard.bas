@@ -73,20 +73,22 @@ Sub UpdateDashboard()
                 wsDash.Cells(dashRow, "H").Value = ws.Cells(i, "H").Value
                 ' Dashboard col I = Est. Cost (project col I)
                 wsDash.Cells(dashRow, "I").Value = ws.Cells(i, "I").Value
-                ' Dashboard col J = Approved By (project col L)
+                ' Dashboard col J = Link to Proforma (project col L)
                 wsDash.Cells(dashRow, "J").Value = ws.Cells(i, "L").Value
-                ' Dashboard col K = Amount Paid (project col N)
-                wsDash.Cells(dashRow, "K").Value = ws.Cells(i, "N").Value
-                ' Dashboard col L = Paid Date (project col O)
-                wsDash.Cells(dashRow, "L").Value = ws.Cells(i, "O").Value
-                ' Dashboard col M = Amount Outstanding (Est. Cost - Amount Paid)
+                ' Dashboard col K = Approved By (project col M)
+                wsDash.Cells(dashRow, "K").Value = ws.Cells(i, "M").Value
+                ' Dashboard col L = Amount Paid (project col N)
+                wsDash.Cells(dashRow, "L").Value = ws.Cells(i, "N").Value
+                ' Dashboard col M = Paid Date (project col O)
+                wsDash.Cells(dashRow, "M").Value = ws.Cells(i, "O").Value
+                ' Dashboard col N = Amount Outstanding (Est. Cost - Amount Paid)
                 Dim estCost As Double
                 Dim amtPaid As Double
                 estCost = 0
                 amtPaid = 0
                 If IsNumeric(ws.Cells(i, "I").Value) Then estCost = ws.Cells(i, "I").Value
                 If IsNumeric(ws.Cells(i, "N").Value) Then amtPaid = ws.Cells(i, "N").Value
-                wsDash.Cells(dashRow, "M").Value = estCost - amtPaid
+                wsDash.Cells(dashRow, "N").Value = estCost - amtPaid
 
                 dashRow = dashRow + 1
             End If
@@ -98,9 +100,9 @@ NextSheet:
     ' Format currency and date columns
     If dashRow > 13 Then
         wsDash.Range("I13:I" & (dashRow - 1)).NumberFormat = "£#,##0.00"
-        wsDash.Range("K13:K" & (dashRow - 1)).NumberFormat = "£#,##0.00"
-        wsDash.Range("L13:L" & (dashRow - 1)).NumberFormat = "dd/mm/yyyy"
-        wsDash.Range("M13:M" & (dashRow - 1)).NumberFormat = "£#,##0.00"
+        wsDash.Range("L13:L" & (dashRow - 1)).NumberFormat = "£#,##0.00"
+        wsDash.Range("M13:M" & (dashRow - 1)).NumberFormat = "dd/mm/yyyy"
+        wsDash.Range("N13:N" & (dashRow - 1)).NumberFormat = "£#,##0.00"
     End If
 
     Application.ScreenUpdating = True
