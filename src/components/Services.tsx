@@ -1,10 +1,10 @@
-import { Building2, TrendingUp, Shield, Users } from "lucide-react";
+import { Cpu, Building2, TrendingUp, Shield } from "lucide-react";
 
 const services = [
-  { icon: Building2, title: "Property Investment", desc: "Strategic portfolio management across residential and supported living sectors." },
-  { icon: TrendingUp, title: "Consulting & Mentoring", desc: "Hands-on guidance for businesses and entrepreneurs looking to grow, overcome challenges, and reach their potential." },
-  { icon: Shield, title: "Project Management", desc: "Delivering construction projects on budget, on time, and with proper risk management." },
-  { icon: Users, title: "Investor Relations", desc: "Transparent, research-led investment partnerships built on trust and experience." },
+  { icon: Cpu, title: "AI Enablement & Web Development", desc: "Expert AI guidance that helps small businesses improve operations, build capability and fill skills gaps, alongside professional website design and development." },
+  { icon: Building2, title: "Property Investment", desc: "Direct investment in residential and supported-living property, backed by careful research, considered acquisitions and a focus on long-term value." },
+  { icon: TrendingUp, title: "Consulting & Mentoring", desc: "Practical advice and hands-on mentoring that helps business owners solve problems, strengthen their strategy and grow with confidence." },
+  { icon: Shield, title: "Project Management", desc: "Construction project oversight from planning to completion, with firm control over contractors, budgets, schedules and risks." },
 ];
 
 const Services = () => (

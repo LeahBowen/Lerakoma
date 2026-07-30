@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -18,7 +18,6 @@ const Navbar = () => {
           <a href="/#services" className="hover:text-foreground transition-colors">What We Do</a>
           <Link to="/who-we-are" className="hover:text-foreground transition-colors">Who We Are</Link>
           <Link to="/initiatives" className="hover:text-foreground transition-colors">Initiatives</Link>
-          <Link to="/insights" className="hover:text-foreground transition-colors">Insights</Link>
           <Link to="/testimonials" className="hover:text-foreground transition-colors">Testimonials</Link>
           
         </div>
@@ -37,7 +36,6 @@ const Navbar = () => {
           <a href="/#services" onClick={() => setOpen(false)} className="hover:text-foreground">What We Do</a>
           <Link to="/who-we-are" onClick={() => setOpen(false)} className="hover:text-foreground">Who We Are</Link>
           <Link to="/initiatives" onClick={() => setOpen(false)} className="hover:text-foreground">Initiatives</Link>
-          <Link to="/insights" onClick={() => setOpen(false)} className="hover:text-foreground">Insights</Link>
           <Link to="/testimonials" onClick={() => setOpen(false)} className="hover:text-foreground">Testimonials</Link>
           
         </div>
