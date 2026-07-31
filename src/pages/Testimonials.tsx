@@ -26,7 +26,7 @@ const testimonials = [
   },
   {
     quote:
-      "Mark has been involved with my business for around 10 years. When we first started working together, I was operating as a typical builder with limited structure and was regularly facing issues with project overspends and overruns.\n\nSince Mark has been mentoring me and taking on a project management role within my business (around 4 hours per week), we have gone from strength to strength. What began as a reasonable living as a small building firm has grown into a business with a turnover of approximately £2.5 million, alongside a portfolio of investments across multiple sectors.\n\nMark's guidance, strategic thinking and support have been instrumental in this growth, and I have complete trust in his judgment and integrity. Needless to say, I intend to continue working with Mark for the long term.",
+      "Mark has been involved with my business for around 10 years. When we first started working together, I was operating as a typical builder with limited structure and was regularly facing issues with project overspends and overruns.\n\nSince Mark has been mentoring me and taking on a project management role within my business, we have gone from strength to strength. What began as a reasonable living as a small building firm has grown into a business with a turnover of approximately £2.5 million, alongside a portfolio of investments across multiple sectors.\n\nMark's guidance, strategic thinking and support have been instrumental in this growth, and I have complete trust in his judgment and integrity. Needless to say, I intend to continue working with Mark for the long term.",
     name: "Peter Cook",
     title: "Director, Fineva Construction Limited",
   },
